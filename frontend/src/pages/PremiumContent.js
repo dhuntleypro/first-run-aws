@@ -13,10 +13,17 @@ const PremiumContent = () => {
     navigate('/login');
   };
   return (
-    <div>
-      Hello {name}! You have been logged in !!! Welcome to the premium content.
-      <input type="button" value="Logout" onClick={logoutHandler}></input>
-    </div>
+    <>
+      {user ? (
+        <div>
+          Hello {name}! You have been logged in !!! Welcome to the premium
+          content.
+          <input type="button" value="Logout" onClick={logoutHandler}></input>
+        </div>
+      ) : (
+        <div>not signed in</div>
+      )}
+    </>
   );
 };
 

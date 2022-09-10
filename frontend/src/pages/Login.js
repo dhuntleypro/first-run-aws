@@ -44,6 +44,7 @@ const Login = () => {
         setUserSession(response.data.user, response.data.token);
         setErrorMessage('Login Successful');
         navigate('/premium-content');
+        refreshPage();
       })
       .catch((error) => {
         if (error.response.status === 401 || error.response.status === 403) {
@@ -55,6 +56,10 @@ const Login = () => {
         }
       });
   };
+
+  function refreshPage() {
+    window.location.reload(false);
+  }
 
   return (
     <div>

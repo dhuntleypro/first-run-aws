@@ -1,8 +1,16 @@
-import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
+import {
+  BrowserRouter,
+  Navigate,
+  NavLink,
+  Route,
+  Routes,
+} from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import PremiumContent from './pages/PremiumContent';
 import Register from './pages/Register';
+import PrivateRoute from './routes/PrivateRoute';
+import { getToken } from './service/AuthService';
 
 function App() {
   return (
@@ -17,10 +25,13 @@ function App() {
 
         <div className="content">
           <Routes>
+            {/* Public Routes */}
             <Route exact path="/" element={<Home />} />
-            <Route path="/register" element={<Register />}></Route>
-            <Route path="/login" element={<Login />}></Route>
-            <Route path="/premium-content" element={<PremiumContent />}></Route>
+            <Route exact path="/register" element={<Register />} />
+            <Route exact path="/login" element={<Login />} />
+
+            {/* Private Routes (not coded optimally - refresh fuction on login)*/}
+            <Route exact path="/premium-content" element={<PremiumContent />} />
           </Routes>
         </div>
       </BrowserRouter>
