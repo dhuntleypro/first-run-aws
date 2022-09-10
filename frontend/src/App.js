@@ -18,6 +18,9 @@ const verifyTokenAPIURL =
 
 function App() {
   const [isAuthenicating, setAuthenicating] = useState(true);
+
+  // Comment out if you do not want users to auto log out after token had expired
+  // This control auto log out (in backend in aws under code | utils | auth.js - espiresIn: 1h)
   useEffect(() => {
     const token = getToken();
     if (
@@ -54,6 +57,7 @@ function App() {
   }, []);
 
   const token = getToken();
+
   if (isAuthenicating && token) {
     return <div className="content">Authenicating...</div>;
   }
