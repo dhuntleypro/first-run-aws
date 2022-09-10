@@ -1,0 +1,17 @@
+{
+  "name": "first-run-aws",
+  "author": "Darrien Huntley",
+  "version": "1.0.0",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dhuntleypro/first-run-aws.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dhuntleypro/first-run-aws/issues"
+  },
+  "dependencies": {
+    "bcryptjs": "2.4.3",
+    "jsonwebtoken": "8.5.1"
+  }
+}
