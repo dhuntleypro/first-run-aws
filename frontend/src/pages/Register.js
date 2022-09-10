@@ -24,6 +24,7 @@ const Register = () => {
       setMessage('All Fields are required');
       return;
     }
+    setMessage(null);
 
     // store api key in envirnment variable
     const requestConfig = {
