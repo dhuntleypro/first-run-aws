@@ -1,8 +1,8 @@
-const jwt = required('jsonwebtoken');
+const jwt = require('jsonwebtoken');
 
 function generateToken(userInfo) {
   if (!userInfo) {
-    return nil;
+    return null;
   }
 
   return jwt.sign(userInfo, process.env.JWT_SECRET, {

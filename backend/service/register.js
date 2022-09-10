@@ -20,10 +20,11 @@ async function register(userInfo) {
     });
   }
 
-  const dynamoUser = await getUser(username);
+  const dynamoUser = await getUser(username.toLowerCase().trim());
   if (dynamoUser && dynamoUser.username) {
     return util.buildResponse(401, {
-      message: 'username already exists in our datebase. ',
+      message:
+        'username already exists in our datebase. please choose a different username ',
     });
   }
 
